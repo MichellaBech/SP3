@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Movies
+class Series
+interface Media
+class Categories
+
+
+Media <|-- Movies
+Media <|-- Series
+
+Movies <|- Categories
+Series <|- Categories
+
+class Movies{
+File movies
+size()
+selectMovie()
+}
+
+
+@enduml
