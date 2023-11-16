@@ -5,6 +5,10 @@ class Movies
 class Series
 interface Media
 class Categories
+class User
+class StartMenu
+class MainMenu
+class Main
 
 
 Media <|-- Movies
@@ -12,11 +16,38 @@ Media <|-- Series
 
 Movies <|- Categories
 Series <|- Categories
+StartMenu <|- User
+MainMenu <|- StartMenu
+Main <|- MainMenu
+MainMenu <|- Media
+
+class Categories {
+private LinkedList<> drama
+private LinkedList<> crime
+private LinkedList<> scienceFiction
+private LinkedList<> romance
+private LinkedList<> family
+private LinkedList<> war
+
+public void addToCategory()
+public LinkedList<String> getDramaList()
+public LinkedList<String> getCrimeList()
+public LinkedList<String> getScienceFictionList()
+public LinkedList<String> getRomanceList()
+public LinkedList<String> getFamilyList()
+public LinkedList<String> getWarList()
+}
 
 class Movies{
 File movies
 size()
 selectMovie()
+}
+
+class User{
+login()
+createNewUser()
+saveLogin()
 }
 
 
