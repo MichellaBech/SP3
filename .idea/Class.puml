@@ -15,12 +15,22 @@ class Main
 Media <|-- Movies
 Media <|-- Series
 
-Movies <|- Categories
-Series <|- Categories
-StartMenu <|- User
-MainMenu <|- StartMenu
-Main <|- MainMenu
-MainMenu <|- Media
+Movies *-- Categories
+Series *-- Categories
+StartMenu *-- User
+StartMenu *-- MainMenu
+Main *-- StartMenu
+MainMenu *-- Media
+
+class Main {
+public static void main ()
+}
+
+class StartMenu {
+Scanner scanner
+public void start()
+
+}
 
 class Categories {
 private LinkedList<> drama
@@ -39,16 +49,39 @@ public LinkedList<String> getFamilyList()
 public LinkedList<String> getWarList()
 }
 
+Interface Media {
+Private String publication
+Private float rating
+}
+
 class Movies{
 File movies
-size()
-selectMovie()
+Scanner scan
+public void selectMovie()
+public void playMovie()
+}
+
+class Series {
+File series
+Scanner scan
+selectSeries()
+playSeries()
+numberOfEpisodes()
+numberOfSeasons()
 }
 
 class User{
+File usernameAndPassword
 login()
 createNewUser()
 saveLogin()
+}
+
+class MainMenu {
+LinkedList<String> watchedMovies
+LinkedList<String> savedMovies
+public LinkedList<String> watchedMovies()
+public LinkedList<String> savedMovies()
 }
 
 

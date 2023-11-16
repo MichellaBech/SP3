@@ -33,7 +33,7 @@ object StartMenu
  CreateNewUser --> User
  Media --> MainMenu
 User --> StartMenu
-StartMenu --> MainMenu
+MainMenu --> StartMenu
 
 
 
