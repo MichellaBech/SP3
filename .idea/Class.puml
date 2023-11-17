@@ -5,17 +5,18 @@
 class Movies
 class Series
 interface Media
+interface TextUI
 class Categories
 class User
 class StartMenu
 class MainMenu
 class Main
-class TextUI
-class FileIO
+interface FileIO
+Abstract class Genre
 
-
-Media <|-- Movies
-Media <|-- Series
+Media <|-- Genre
+Genre <|-- Movies
+Genre <|-- Series
 
 Movies *-- Categories
 Series *-- Categories
@@ -24,6 +25,11 @@ StartMenu *-- MainMenu
 Main *-- StartMenu
 MainMenu *-- Media
 
+Abstract class Genre {
+FileIO fileIO
+TextUI textUI
+public void selectMedia()
+}
 
 class TextUI
 {
@@ -68,17 +74,10 @@ Private float rating
 }
 
 class Movies{
-FileIO fileIO
-TextUI
-public void selectMovie()
-public void playMovie()
+
 }
 
 class Series {
-FileIO fileIO
-TextUI
-public void selectSeries()
-public String playSeries()
 public void numberOfEpisodes()
 public void numberOfSeasons()
 }
@@ -93,14 +92,14 @@ saveLogin()
 class MainMenu {
 FileIO fileIO
 TextUO textUI
-private LinkedList<String> watchedMovies
-private LinkedList<String> savedMovies
+private LinkedList<String> watchedMedia
+private LinkedList<String> savedMedia
 public void movieSearch()
 public void chooseCategory()
-public void playMovie()
-public void saveMovie()
-public LinkedList<String> watchedMovies()
-public LinkedList<String> savedMovies()
+public void playMedia()
+public void saveMedia()
+public LinkedList<String> watchedMedia()
+public LinkedList<String> savedMedia()
 }
 
 
