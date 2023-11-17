@@ -27,6 +27,7 @@ Menu *-- FileIO
 Menu *-- TextUI
 Genre *-- FileIO
 Genre *-- TextUI
+User *-- FileIO
 
 Abstract class Genre {
 FileIO fileIO
