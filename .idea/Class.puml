@@ -58,6 +58,7 @@ public void numberOfSeasons()
 
 class User{
 FileIO fileIO
+TextUI textUI
 login()
 createNewUser()
 saveLogin()
