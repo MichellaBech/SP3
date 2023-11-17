@@ -14,7 +14,7 @@ class Main
 
 Abstract class Genre
 
-Media <|-- Genre
+Media <|--- Genre
 Genre <|-- Movies
 Genre <|-- Series
 
@@ -50,20 +50,20 @@ public static void main ()
 
 
 class Categories {
-private LinkedList<> drama
-private LinkedList<> crime
-private LinkedList<> scienceFiction
-private LinkedList<> romance
-private LinkedList<> family
-private LinkedList<> war
+private ArrayList<> drama
+private ArrayList<> crime
+private ArrayList<> scienceFiction
+private ArrayList<> romance
+private ArrayList<> family
+private ArrayList<> war
 
 public void addToCategory()
-public LinkedList<String> getDramaList()
-public LinkedList<String> getCrimeList()
-public LinkedList<String> getScienceFictionList()
-public LinkedList<String> getRomanceList()
-public LinkedList<String> getFamilyList()
-public LinkedList<String> getWarList()
+public ArrayList<String> getDramaList()
+public ArrayList<String> getCrimeList()
+public ArrayList<String> getScienceFictionList()
+public ArrayList<String> getRomanceList()
+public ArrayList<String> getFamilyList()
+public ArrayList<String> getWarList()
 }
 
 Interface Media {
