@@ -20,6 +20,9 @@ Menu *-- Media
 Menu *-- FileIO
 Menu *-- TextUI
 User *-- FileIO
+User *-- TextUI
+Media *-- FileIO
+Media *-- TextUI
 
 class TextUI
 {
