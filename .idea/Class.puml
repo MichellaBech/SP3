@@ -51,12 +51,12 @@ public static void main ()
 
 
 class Categories {
-private ArrayList<> drama
-private ArrayList<> crime
-private ArrayList<> scienceFiction
-private ArrayList<> romance
-private ArrayList<> family
-private ArrayList<> war
+private ArrayList<String> drama
+private ArrayList<String> crime
+private ArrayList<String> scienceFiction
+private ArrayList<String> romance
+private ArrayList<String> family
+private ArrayList<String> war
 
 public void addToCategory()
 public ArrayList<String> getDramaList()
