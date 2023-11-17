@@ -90,15 +90,15 @@ saveLogin()
 class Menu {
 FileIO fileIO
 TextUO textUI
-private LinkedList<String> watchedMedia
-private LinkedList<String> savedMedia
+private  HashSet<String> watchedMedia
+private  HashSet<String> savedMedia
 oublic void startMenu()
 public void movieSearch()
 public void chooseCategory()
 public void playMedia()
 public void saveMedia()
-public LinkedList<String> watchedMedia()
-public LinkedList<String> savedMedia()
+public  HashSet<String> watchedMedia()
+public  HashSet<String> savedMedia()
 }
 
 
