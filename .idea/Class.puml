@@ -93,7 +93,7 @@ FileIO fileIO
 TextUO textUI
 private  HashSet<String> watchedMedia
 private  HashSet<String> savedMedia
-oublic void startMenu()
+public void startMenu()
 public void movieSearch()
 public void chooseCategory()
 public void playMedia()
