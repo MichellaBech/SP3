@@ -23,8 +23,7 @@ StartMenu *-- User
 StartMenu *-- MainMenu
 Main *-- StartMenu
 MainMenu *-- Media
-StartMenu *-- TextUI
-User *-- FileIO
+
 
 class TextUI
 {
@@ -69,15 +68,15 @@ Private float rating
 }
 
 class Movies{
-File movies
-Scanner scan
+FileIO fileIO
+TextUI
 public void selectMovie()
 public void playMovie()
 }
 
 class Series {
-File series
-Scanner scan
+FileIO fileIO
+TextUI
 public void selectSeries()
 public String playSeries()
 public void numberOfEpisodes()
@@ -95,6 +94,8 @@ class MainMenu {
 FileIO fileIO
 LinkedList<String> watchedMovies
 LinkedList<String> savedMovies
+public void movieSearch()
+public void chooseCategory()
 public LinkedList<String> watchedMovies()
 public LinkedList<String> savedMovies()
 }
