@@ -2,38 +2,24 @@
 'https://plantuml.com/class-diagram
 !pragma layout smetana
 
-interface FileIO
+class FileIO
 class Movies
 class Series
-interface Media
+Abstract Class Media
 class TextUI
-class Categories
 class User
 class Menu
 class Main
 
-Abstract class Genre
-
-Media <|--- Genre
-Genre <|-- Movies
-Genre <|-- Series
+Media <|-- Movies
+Media <|-- Series
 
 Main *-- Menu
-Movies *-- Categories
-Series *-- Categories
 Menu *-- User
 Menu *-- Media
 Menu *-- FileIO
 Menu *-- TextUI
-Genre *-- FileIO
-Genre *-- TextUI
 User *-- FileIO
-
-Abstract class Genre {
-FileIO fileIO
-TextUI textUI
-public void selectMedia()
-}
 
 class TextUI
 {
@@ -49,27 +35,16 @@ class Main {
 public static void main ()
 }
 
-
-class Categories {
-private ArrayList<String> drama
-private ArrayList<String> crime
-private ArrayList<String> scienceFiction
-private ArrayList<String> romance
-private ArrayList<String> family
-private ArrayList<String> war
-
-public void addToCategory()
-public ArrayList<String> getDramaList()
-public ArrayList<String> getCrimeList()
-public ArrayList<String> getScienceFictionList()
-public ArrayList<String> getRomanceList()
-public ArrayList<String> getFamilyList()
-public ArrayList<String> getWarList()
-}
-
-Interface Media {
+Abstract Class Media {
 Private String publication
-Private float rating
+Private ArrayList<Media> rating
+private String name
+private ArrayList<Media> categories
+FileIO fileIO
+TextUI textUI
+public void selectMedia()
+public void getCategories()
+public void getRatingList()
 }
 
 class Movies{
@@ -90,16 +65,16 @@ saveLogin()
 
 class Menu {
 FileIO fileIO
-TextUO textUI
-private  HashSet<String> watchedMedia
-private  HashSet<String> savedMedia
+TextUI textUI
+private  HashSet<Media> watchedMedia
+private  HashSet<Media> savedMedia
 public void startMenu()
 public void movieSearch()
 public void chooseCategory()
 public void playMedia()
 public void saveMedia()
-public  HashSet<String> watchedMedia()
-public  HashSet<String> savedMedia()
+public  HashSet<Media> watchedMedia()
+public  HashSet<Media> savedMedia()
 }
 
 
