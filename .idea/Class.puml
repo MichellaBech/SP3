@@ -10,6 +10,8 @@ class User
 class StartMenu
 class MainMenu
 class Main
+class TextUI
+class FileIO
 
 
 Media <|-- Movies
@@ -21,13 +23,25 @@ StartMenu *-- User
 StartMenu *-- MainMenu
 Main *-- StartMenu
 MainMenu *-- Media
+StartMenu *-- TextUI
+User *-- FileIO
+
+class TextUI
+{
+Scanner scanner
+}
+
+class FileIO {
+File file
+Filewriter writer
+}
 
 class Main {
 public static void main ()
 }
 
 class StartMenu {
-Scanner scanner
+TextUI textUI
 public void start()
 
 }
@@ -64,20 +78,21 @@ public void playMovie()
 class Series {
 File series
 Scanner scan
-selectSeries()
-playSeries()
-numberOfEpisodes()
-numberOfSeasons()
+public void selectSeries()
+public String playSeries()
+public void numberOfEpisodes()
+public void numberOfSeasons()
 }
 
 class User{
-File usernameAndPassword
+FileIO fileIO
 login()
 createNewUser()
 saveLogin()
 }
 
 class MainMenu {
+FileIO fileIO
 LinkedList<String> watchedMovies
 LinkedList<String> savedMovies
 public LinkedList<String> watchedMovies()
