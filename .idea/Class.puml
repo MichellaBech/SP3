@@ -92,6 +92,7 @@ saveLogin()
 
 class MainMenu {
 FileIO fileIO
+TextUO textUI
 private LinkedList<String> watchedMovies
 private LinkedList<String> savedMovies
 public void movieSearch()
