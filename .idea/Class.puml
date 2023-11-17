@@ -92,10 +92,12 @@ saveLogin()
 
 class MainMenu {
 FileIO fileIO
-LinkedList<String> watchedMovies
-LinkedList<String> savedMovies
+private LinkedList<String> watchedMovies
+private LinkedList<String> savedMovies
 public void movieSearch()
 public void chooseCategory()
+public void playMovie()
+public void saveMovie()
 public LinkedList<String> watchedMovies()
 public LinkedList<String> savedMovies()
 }
