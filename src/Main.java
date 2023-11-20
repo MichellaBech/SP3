@@ -2,11 +2,15 @@ package src;
 
 public class Main {
 
-    static Menu menu = new Menu();
+
 
 
     public static void main(String[] args) {
-        menu.startMenu();
+        Menu menu = new Menu();
+       menu.startMenu();
+
+        FileIO io = new FileIO();
+        //System.out.println(io.scanMediaCategories("100bedstefilm.txt", "Drama"));
 
 
 
