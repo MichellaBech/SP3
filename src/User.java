@@ -8,6 +8,8 @@ public class User {
     final String password;
     TextUI ui = new TextUI();
     FileIO io = new FileIO();
+
+    Menu menu = new Menu();
    ArrayList<User> login = new ArrayList<>();
 
    public User(String username, String password)
@@ -17,15 +19,11 @@ public class User {
    }
     public void createLogin()
     {
-        if (ui.getInput("Hello, welcome to CHILL! Do you want to create account or login?").equalsIgnoreCase("create account")){
             String inputUsername = ui.getInput("Please write a username: ");
             String inputPassword = ui.getInput("Please write a password: ");
             User user = new User(inputUsername, inputPassword);
             login.add(user);
             io.saveLogin(login);
-        } else {
-            login();
-        }
     }
 
     public void login() {
@@ -34,7 +32,7 @@ public class User {
             if (io.readFile(inputUsername, inputPassword, "data.txt")) {
                 ui.displayMessage("Welcome back!");
             }
-
+        menu.mainMenu();
     }
 
     public String getUsername()

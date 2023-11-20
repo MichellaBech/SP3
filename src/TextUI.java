@@ -19,6 +19,7 @@ public class TextUI {
 
     }
 
+    /*
     public String getChoice(ArrayList<String> options, String msg){
         System.out.println(msg);
         //  diplayMenu(options);
@@ -31,5 +32,5 @@ public class TextUI {
         }
 
         return input;
-    }
+    } */
 }
