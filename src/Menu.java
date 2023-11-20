@@ -9,6 +9,8 @@ public class Menu {
     ArrayList<User> login = new ArrayList<>();
     FileIO io = new FileIO();
 
+    User user = new User("","");
+
 
 
 
@@ -40,13 +42,32 @@ public class Menu {
         }
     }
 
-
+    //Shows the mainMenu and save the users respond.
     public void mainMenu()
     {
-        ui.displayMessage("Search for a specific movie:");
-        ui.displayMessage("Choose category: ");
-        ui.displayMessage("Movies you've seen: ");
-        ui.displayMessage("Saved movies: ");
+        String input = ui.getInput("Please select one of the following: " +
+                "\n 1: Search for a specific movie" +
+                "\n 2: Choose category" +
+                "\n 3: Movies you've seen" +
+                        "\n 4: Saved movies");
+
+        int inputInt =Integer.valueOf(input);
+        switch (inputInt) {
+            case 1:
+                movieSearch();
+                break;
+            case 2:
+                chooseCategorie();
+                break;
+            case 3:
+                user.getWatchedMedia();
+                break;
+            case 4:
+                user.getSavedMedia();
+                break;
+            default:
+                ui.displayMessage("Please write a number");
+        }
     }
 
     public void createLogin()
@@ -56,6 +77,7 @@ public class Menu {
         User user = new User(inputUsername, inputPassword);
         login.add(user);
         io.saveLogin(login);
+        mainMenu();
     }
 
     public void login() {
@@ -67,6 +89,7 @@ public class Menu {
         mainMenu();
     }
 
+    //Marwa
     public void movieSearch()
     {
 

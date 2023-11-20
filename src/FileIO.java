@@ -5,29 +5,26 @@ import java.util.Scanner;
 
 
 public class FileIO {
-
-    Menu menu = new Menu();
     TextUI ui = new TextUI();
 
+    ArrayList<User> users = new ArrayList<>();
+
     //This method saves login
-    public void saveLogin(ArrayList<User> login){
-        try
-        {
+    public void saveLogin(ArrayList<User> login) {
+        try {
             FileWriter writer = new FileWriter("data.txt", true);
             for (User c : login) {
                 String textTosave = c.getUsername() + "," + c.getPassword();
                 writer.write(textTosave + "\n");
             }
             writer.close();
-        } catch(IOException e)
-        {
+        } catch (IOException e) {
             System.out.println("Something went wrong while writing to file ");
         }
-
-        menu.mainMenu();
     }
 
     public boolean readFile(String username, String password, String path) {
+        Menu menu = new Menu();
         try {
             File myObj = new File(path);
             if (!myObj.exists()) {
@@ -44,14 +41,16 @@ public class FileIO {
                 }
                 myReader.close();
             }
-            } catch (FileNotFoundException ex) {
-                System.out.println("Something went wrong reading the file");
-            }
-            ui.displayMessage("Could not find login, please create account");
-             User user = new User(username, password);
-            menu.createLogin();
-            return false;
+        } catch (FileNotFoundException ex) {
+            System.out.println("Something went wrong reading the file");
         }
+        ui.displayMessage("Could not find login, please create account");
+        User user = new User(username, password);
+        menu.createLogin();
+        return false;
+    }
+
+
 
     public ArrayList<String> scanMedia(String path)
     {
