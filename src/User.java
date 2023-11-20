@@ -1,39 +1,22 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class User {
 
-    final String username;
-    final String password;
-    TextUI ui = new TextUI();
-    FileIO io = new FileIO();
+    private String username;
+    private String password;
 
-    Menu menu = new Menu();
-   ArrayList<User> login = new ArrayList<>();
+    private HashSet<Media> watchedMedia = new HashSet<Media>();
+    private HashSet<Media> savedMedia = new HashSet<Media>();
 
    public User(String username, String password)
    {
        this.username = username;
        this.password = password;
    }
-    public void createLogin()
-    {
-            String inputUsername = ui.getInput("Please write a username: ");
-            String inputPassword = ui.getInput("Please write a password: ");
-            User user = new User(inputUsername, inputPassword);
-            login.add(user);
-            io.saveLogin(login);
-    }
 
-    public void login() {
-            String inputUsername = ui.getInput("Please write your username: ");
-            String inputPassword = ui.getInput("Please write your password: ");
-            if (io.readFile(inputUsername, inputPassword, "data.txt")) {
-                ui.displayMessage("Welcome back!");
-            }
-        menu.mainMenu();
-    }
 
     public String getUsername()
     {
@@ -44,4 +27,15 @@ public class User {
     {
         return password;
     }
+
+    public HashSet<Media> getWatchedMedia()
+    {
+        return watchedMedia;
+    }
+
+    public HashSet<Media> getSavedMedia()
+    {
+        return savedMedia;
+    }
+
 }

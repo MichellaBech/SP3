@@ -49,7 +49,7 @@ public class FileIO {
             }
             ui.displayMessage("Could not find login, please create account");
              User user = new User(username, password);
-            user.createLogin();
+            menu.createLogin();
             return false;
         }
 
