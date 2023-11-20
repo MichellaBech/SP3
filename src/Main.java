@@ -12,7 +12,5 @@ public class Main {
         FileIO io = new FileIO();
         //System.out.println(io.scanMediaCategories("100bedstefilm.txt", "Drama"));
 
-
-
     }
 }
