@@ -29,13 +29,12 @@ public class User {
     }
 
     public void login() {
-        if (ui.getInput("Type Y to proceed to login").equalsIgnoreCase("Y")) {
             String inputUsername = ui.getInput("Please write your username: ");
             String inputPassword = ui.getInput("Please write your password: ");
             if (io.readFile(inputUsername, inputPassword, "data.txt")) {
                 ui.displayMessage("Welcome back!");
             }
-        }
+
     }
 
     public String getUsername()
