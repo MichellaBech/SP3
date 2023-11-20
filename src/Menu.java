@@ -7,7 +7,6 @@ public class Menu {
 
     public Menu()
     {
-
     }
 
     //Starts the program, where it reads the users answer, login, create account or something went wrong
@@ -35,6 +34,9 @@ public class Menu {
 
     public void mainMenu()
     {
-    ui.displayMessage("mainMenu");
+        ui.displayMessage("Search for a specific movie:");
+        ui.displayMessage("Choose category: ");
+        ui.displayMessage("Movies you've seen: ");
+        ui.displayMessage("Saved movies: ");
     }
 }

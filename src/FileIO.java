@@ -70,5 +70,23 @@ public class FileIO {
         return data;
     }
 
+    public ArrayList<String> scanMediaCategories(String path, String userInput)
+    {
+        ArrayList<String> data = new ArrayList();
+        File file = new File(path);
+        try
+        {
+            Scanner scan = new Scanner(file);
+            while(scan.hasNextLine()) {
+                String s = scan.nextLine();
+                if(s.contains(userInput))
+                    data.add(s);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+        return data;
+    }
+
 
 }
