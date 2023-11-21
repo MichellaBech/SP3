@@ -33,9 +33,14 @@ public class User {
         return watchedMedia;
     }
 
-    public HashSet<Media> getSavedMedia()
+    public HashSet<Media> getSavedMedia(User user)
     {
         return savedMedia;
+    }
+
+    public String toString()
+    {
+        return "Username: " + getUsername() +  " " + "Password: " + getPassword();
     }
 
 }
