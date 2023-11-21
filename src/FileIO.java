@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 
 public class FileIO {
-
-    Menu menu = new Menu();
     TextUI ui = new TextUI();
 
     //This method saves login
@@ -23,11 +21,10 @@ public class FileIO {
         {
             System.out.println("Something went wrong while writing to file ");
         }
-
-        menu.mainMenu();
     }
 
     public boolean readFile(String username, String password, String path) {
+        Menu menu = new Menu();
         try {
             File myObj = new File(path);
             if (!myObj.exists()) {
