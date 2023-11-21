@@ -10,7 +10,14 @@ public class Main {
 
     public static void main(String[] args) {
         Menu menu = new Menu();
+        ArrayList<User> users = new ArrayList<>();
+
         menu.startMenu();
+        //menu.getLogin();
+
+
+
+
 
 
 

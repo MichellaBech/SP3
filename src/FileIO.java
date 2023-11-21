@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class FileIO {
     TextUI ui = new TextUI();
 
-    ArrayList<User> users = new ArrayList<>();
+    ArrayList<User> login = new ArrayList<>();
 
     //This method saves login
     public void saveLogin(ArrayList<User> login) {

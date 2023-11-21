@@ -18,6 +18,16 @@ public class Menu {
     {
     }
 
+   //print out the username and password
+    public void getLogin()
+    {
+        for (User user : login) {
+            String username = user.getUsername();
+            String password = user.getPassword();
+            System.out.println("Username: " + username + ", Password: " + password);
+        }
+    }
+
     //Starts the program, where it reads the users answer, login, create account or something went wrong
     public void startMenu() {
         io.scanMedia("100bedstefilm.txt");
@@ -78,6 +88,7 @@ public class Menu {
         login.add(user);
         io.saveLogin(login);
         mainMenu();
+
     }
 
     public void login() {
