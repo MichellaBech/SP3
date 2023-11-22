@@ -30,6 +30,8 @@ public class User {
 
     public HashSet<Media> getWatchedMedia()
     {
+        TextUI ui = new TextUI();
+        ui.displayMessage("Your watched Media: " + watchedMedia);
         return watchedMedia;
     }
 
