@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/object-diagram
+!pragma layout smetana
+
+object User
+object Media
+object Movies
+object Series
+object Categories
+object Crime
+object War
+object Family
+object Romance
+object Drama
+object ScienceFiction
+object Login
+object CreateNewUser
+object MainMenu
+object StartMenu
+
+
+ Movies --> Media
+ Series --> Media
+ Categories --> Series
+ Categories --> Movies
+ Crime --> Categories
+ War --> Categories
+ Family --> Categories
+ Romance --> Categories
+ Drama --> Categories
+ ScienceFiction--> Categories
+ Login --> User
+ CreateNewUser --> User
+ Media --> MainMenu
+User --> StartMenu
+MainMenu --> StartMenu
+
+
+
+@enduml
