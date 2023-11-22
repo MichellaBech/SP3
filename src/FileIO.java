@@ -101,7 +101,7 @@ public class FileIO {
         return data;
     }
 
-    public ArrayList<String> scanMediaCategories(String path, String userInput)
+    public ArrayList<String> searchInFile(String path, String userInput)
     {
         ArrayList<String> data = new ArrayList();
         TextUI ui = new TextUI();

@@ -158,7 +158,7 @@ public class Menu {
     Boolean isItValid = false;
                 ui.displayMessage("All series: " + io.scanMedia("100bedsteserier.txt"));
     String serieSave = ui.getInput("Write the name of the serie you want to save or play");
-               ui.displayMessage("You choose: " +  io.scanMediaCategories("100bedsteserier.txt", serieSave));
+               ui.displayMessage("You choose: " +  io.searchInFile("100bedsteserier.txt", serieSave));
                 while(!isItValid) {
         String choice = ui.getInput("Do you want to save or play the serie?");
         if(choice.equals("save")) {
@@ -177,7 +177,7 @@ public class Menu {
 
         ui.displayMessage("All movies: " + io.scanMedia("100bedstefilm.txt"));
         String movieSave = ui.getInput("Write the name of the movie you want to save or play");
-        ui.displayMessage("You choose: " + io.scanMediaCategories("100bedstefilm.txt", movieSave));
+        ui.displayMessage("You choose: " + io.searchInFile("100bedstefilm.txt", movieSave));
         while(!isValid) {
             String choice = ui.getInput("Do you want to save or play the movie?");
             if(choice.equals("save")) {

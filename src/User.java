@@ -1,8 +1,6 @@
 package src;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedList;
 
 public class User {
 
@@ -21,8 +19,8 @@ public class User {
     public void saveMedia(String media, User user) {
        TextUI ui = new TextUI();
         FileIO io = new FileIO();
-        String saveMedia = String.valueOf(io.scanMediaCategories("100bedstefilm.txt", media));
-        String savesMedia = String.valueOf(io.scanMediaCategories("100bedsteserier.txt", media));
+        String saveMedia = String.valueOf(io.searchInFile("100bedstefilm.txt", media));
+        String savesMedia = String.valueOf(io.searchInFile("100bedsteserier.txt", media));
         savedMedia.add(saveMedia);
        ui.displayMessage(String.valueOf(getSavedMedia(user)));
     }
