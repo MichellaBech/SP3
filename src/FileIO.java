@@ -120,5 +120,23 @@ public class FileIO {
         return data;
     }
 
+    public ArrayList<String> searchMovies(String searchInput, String path) {
+        ArrayList<String> movieList = new ArrayList<>();
+        File file = new File(path);
+
+        try{
+            Scanner scan = new Scanner(file);
+            while (scan.hasNext()) {
+                String movies = scan.nextLine();
+                if (movies.contains(searchInput)) {
+                    movieList.add(movies);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+        return movieList;
+    }
+
 
 }
