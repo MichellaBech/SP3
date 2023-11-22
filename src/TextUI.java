@@ -1,11 +1,10 @@
 package src;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TextUI {
 
-    final Scanner scan = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
 
     //shows a message and returns the user's input as a String
     public String getInput(String msg){
@@ -22,7 +21,7 @@ public class TextUI {
     /*
     public String getChoice(ArrayList<String> options, String msg){
         System.out.println(msg);
-        //  diplayMenu(options);
+        //  displayMenu(options);
         String input = getInput("");
 
         //tjek om input findes i listen, hvis ikke, smid en exception

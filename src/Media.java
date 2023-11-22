@@ -9,8 +9,11 @@ public abstract class Media {
 
     private String title;
     private ArrayList<Media> categories;
-    FileIO io = new FileIO();
-    TextUI ui = new TextUI();
+
+    public Media(String title)
+    {
+        this.title = title;
+    }
 
 
 }
