@@ -10,10 +10,14 @@ public abstract class Media {
     private String title;
     private ArrayList<Media> categories;
 
-    public Media(String title)
+    public Media(String title,String publication)
     {
         this.title = title;
+        this.publication = publication;
     }
 
+    public String getPublication(){
+            return publication;
 
+        }
 }
