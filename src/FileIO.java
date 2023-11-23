@@ -120,13 +120,14 @@ public class FileIO {
         return data;
     }
 
+    //Method for searching movies in general
     public ArrayList<String> searchMovies(String searchInput, String path) {
         ArrayList<String> movieList = new ArrayList<>();
         File file = new File(path);
 
-        try{
+        try {
             Scanner scan = new Scanner(file);
-            while (scan.hasNext()) {
+            while (scan.hasNextLine()) {
                 String movies = scan.nextLine();
                 if (movies.contains(searchInput)) {
                     movieList.add(movies);
@@ -138,5 +139,33 @@ public class FileIO {
         return movieList;
     }
 
+    //Method for getting a complete list of movies sorted by publication year
+    public ArrayList<Movies>publication(String path) {
+        ArrayList<Movies> resultList = new ArrayList<>();
+        File file = new File(path);
+        try {
+            Scanner scan = new Scanner(file);
+            while (scan.hasNextLine()) {
+                String publicationData = scan.nextLine();
+                String[] publicationInfo = publicationData.split(";");
+                if (publicationInfo.length >= 2) {
+                    String title = publicationInfo[0];
+                    String publicationYear = publicationInfo[1];
 
-}
+                    Movies movie = new Movies(title, publicationYear);
+                    resultList.add(movie);
+                } else {
+                    System.out.print("no match");
+                }
+            }
+
+            Collections.sort(resultList, Comparator.comparing(Movies::getPublication));
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+        return resultList;
+    }
+
+
+
+            }
