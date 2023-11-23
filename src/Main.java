@@ -10,6 +10,9 @@ public class Main {
         Menu menu = new Menu();
         menu.startMenu();
 
+        //MovieSearch method calling
+        menu.movieSearch(io, filepath);
+
     }
 }
 
