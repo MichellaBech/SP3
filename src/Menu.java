@@ -109,20 +109,50 @@ public class Menu {
         mainMenu(user);
     }
 
-    //Marwa
-    public void movieSearch(String filepath) {
-        FileIO io = new FileIO();
-        String inputSearch = ui.getInput("Search movie");
-        ArrayList<String> searchingResults = io.searchMovies(inputSearch, filepath);
+    //Method for searching movies in general or getting movielist sorted by publication year
+    
+    public void movieSearch(FileIO io, String filepath) {
 
-        if (searchingResults.size() == 0) {
-            ui.displayMessage("no search results was found");
-        } else {
-            ui.displayMessage("search results: ");
-            for (String results : searchingResults) {
-                ui.displayMessage(results);
-            }
+        int userChoice = ui.getIntInput("Choose an option:\n 1. Search movie\n 2. Get movielist by publication year");
+
+
+        switch (userChoice) {
+            case 1:
+                String inputSearch = ui.getInput("Search movie");
+                ArrayList<String> searchingResults = io.searchMovies(inputSearch, filepath);
+
+                if (searchingResults.size() == 0) {
+                    ui.displayMessage("no search results was found");
+                } else {
+                    ui.displayMessage("Search results:");
+                    for (String results : searchingResults) {
+                        ui.displayMessage(results);
+                    }
+
+                }
+                break;
+
+            case 2:
+
+                ArrayList<Movies>publication = io.publication(filepath);
+
+                if (publication.size() == 0) {
+                    ui.displayMessage("no search results was found");
+                } else {
+                    ui.displayMessage("Search results sorted by publication year:");
+                    for (Movies movie : publication) {
+                        ui.displayMessage("Title:" + movie.getTitle() + ",Publication Year:" + movie.getPublication());
+                    }
+
+                }
+                break;
+
+            default:
+                ui.displayMessage("Invalid choice. Please choose 1 or 2.");
+
+                break;
         }
+    }
 
     String inputSelect = ui.getInput("Select movie");
     String choice = ui.getInput("Will you like to play or save movie");
