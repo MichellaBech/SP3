@@ -8,14 +8,13 @@ public class FileIO {
 
     ArrayList<User> login = new ArrayList<>();
 
-    public ArrayList<User> readLoginFromFile(String path) {
+    public ArrayList<User> readLoginFromFile(String path) throws RuntimeException {
         ArrayList<User> loginList = new ArrayList<>();
         TextUI ui = new TextUI();
-
         try {
             File myObj = new File(path);
             if (!myObj.exists()) {
-                ui.displayMessage("File not found: " + path);
+                throw new FileNotFoundException("File not found"); // Throw an exception
             }
             try (Scanner myReader = new Scanner(myObj)) {
                 String line = myReader.nextLine();
@@ -28,12 +27,12 @@ public class FileIO {
                         loginList.add(user);
                     }
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
+        } catch (FileNotFoundException e) {
+            // Log or handle the exception as needed
+            throw new RuntimeException(e); // Re-throw the exception
         }
+
         return loginList;
     }
 

@@ -1,5 +1,6 @@
 package src;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Menu {
@@ -12,8 +13,6 @@ public class Menu {
 
 
     public Menu() {
-        //FileIO io = new FileIO();
-        //login = io.readLoginFromFile("data.txt");
     }
 
     //Search for a specific user
@@ -57,30 +56,34 @@ public class Menu {
     public void mainMenu(User user) {
         String input = ui.getInput("Please select one of the following: " +
                 "\n 1: Search for a specific movie" +
-                "\n 2: Choose category" +
-                "\n 3: Movies you've seen" +
-                "\n 4: Saved movies" +
-                "\n 5: View all movies" +
-                "\n 6: View all series");
+                        "\n 2: Search for a specific series" +
+                "\n 3: Choose category" +
+                "\n 4: Movies you've seen" +
+                "\n 5: Saved movies" +
+                "\n 6: View all movies" +
+                "\n 7: View all series");
 
         int inputInt = Integer.valueOf(input);
         switch (inputInt) {
             case 1:
-                movieSearch("100bedstefilm.txt");
+                movieSearch("100bedstefilm.txt", user);
                 break;
             case 2:
-                chooseCategorie();
+                seriesSearch("100bedsteserier.txt", user);
                 break;
             case 3:
-                user.getWatchedMedia();
+                chooseCategorie();
                 break;
             case 4:
-                user.getSavedMedia(user);
+                user.getWatchedMedia();
                 break;
             case 5:
-                viewAllMovies(user);
+                user.getSavedMedia(user);
                 break;
             case 6:
+                viewAllMovies(user);
+                break;
+            case 7:
                 viewAllSeries(user);
                 break;
             default:
@@ -99,18 +102,30 @@ public class Menu {
 
     }
 
-    public void login(User user) {
+    public void login(User user)
+    {
         FileIO io = new FileIO();
         String inputUsername = ui.getInput("Please write your username: ");
         String inputPassword = ui.getInput("Please write your password: ");
-        if (io.readFile(inputUsername, inputPassword, "data.txt")) {
-            ui.displayMessage("Welcome back!");
+        try {
+            boolean loggedIn = (io.readFile(inputUsername, inputPassword, "data.txt"));
+            if(loggedIn)
+            {
+                ui.displayMessage("Welcome back!");
+                mainMenu(user);
+            } else {
+                ui.displayMessage("Sorry! Something went wrong, please try again later.");
+                //Handle the unsuccessful login
+            }
+        } catch(RuntimeException e) {
+        // Log or handle the exception
+        ui.displayMessage("Error occurred: " + e.getMessage());
+
         }
-        mainMenu(user);
     }
 
     //Marwa
-    public void movieSearch(String filepath) {
+    public void movieSearch(String filepath, User user) {
         FileIO io = new FileIO();
         String inputSearch = ui.getInput("Search movie");
         ArrayList<String> searchingResults = io.searchMovies(inputSearch, filepath);
@@ -123,20 +138,39 @@ public class Menu {
                 ui.displayMessage(results);
             }
         }
-
     String inputSelect = ui.getInput("Select movie");
     String choice = ui.getInput("Will you like to play or save movie");
         if(choice.equals("play")) {
         ui.displayMessage(choice + " is now playing");
     } else if(inputSelect.equals("save"))
-
+                user.saveMedia(inputSelect, user);
     {
         ui.displayMessage(choice + " movie is being saved");
-    } else
-
-    {
-        ui.displayMessage("Please enter 'play' or 'save'. ");
     }
+    }
+
+    public void seriesSearch(String filepath, User user) {
+        FileIO io = new FileIO();
+        String inputSearch = ui.getInput("Search series");
+        ArrayList<String> searchingResults = io.searchMovies(inputSearch, filepath);
+
+        if (searchingResults.size() == 0) {
+            ui.displayMessage("no search results was found");
+        } else {
+            ui.displayMessage("search results: ");
+            for (String results : searchingResults) {
+                ui.displayMessage(results);
+            }
+        }
+        String inputSelect = ui.getInput("Select series");
+        String choice = ui.getInput("Will you like to play or save series");
+        if(choice.equals("play")) {
+            ui.displayMessage(choice + " is now playing");
+        } else if(inputSelect.equals("save"))
+            user.saveMedia(inputSelect, user);
+        {
+            ui.displayMessage(choice + " series is being saved");
+        }
     }
 
 
