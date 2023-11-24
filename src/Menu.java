@@ -72,7 +72,7 @@ public class Menu {
                 chooseCategorie();
                 break;
             case 3:
-                user.getWatchedMedia();
+                user.getWatchedMedia(user);
                 break;
             case 4:
                 user.getSavedMedia(user);
@@ -138,9 +138,6 @@ public class Menu {
         ui.displayMessage("Please enter 'play' or 'save'. ");
     }
     }
-
-
-
 
 
     //Make a method call from FileIO
