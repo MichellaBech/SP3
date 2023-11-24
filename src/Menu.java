@@ -1,6 +1,5 @@
 package src;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Menu {
@@ -89,8 +88,9 @@ public class Menu {
                 break;
             case 8:
                 seriesSeasonsAndEpisodes(user);
-                break;
-
+            //case 9:
+              //  io.publication("100bedstefilm.txt");
+               // break;
             default:
                 ui.displayMessage("Please write a number between 1-4");
         }
@@ -146,15 +146,9 @@ public class Menu {
             }
         }
     String inputSelect = ui.getInput("Select movie: ");
-        ui.displayMessage("You choose: " + io.searchInFile("100bedstefilm.txt", inputSelect));
-    String choice = ui.getInput("Will you like to play or save movie");
-        if(choice.equals("play")) {
-        play(choice);
-    } else if(inputSelect.equals("save"))
-            user.saveMedia(inputSelect, user);
-    {
-        ui.displayMessage(choice + " movie is being saved");
-    }
+        String movieFindInFile = String.valueOf(io.searchInFile("100bedstefilm.txt", inputSelect));
+        ui.displayMessage("You choose: " + movieFindInFile);
+        playOrSave(movieFindInFile, user);
     }
 
     public void seriesSearch(String filepath, User user) {
@@ -171,14 +165,7 @@ public class Menu {
             }
         }
         String inputSelect = ui.getInput("Select series");
-        String choice = ui.getInput("Will you like to play or save series");
-        if(choice.equals("play")) {
-            ui.displayMessage(choice + " is now playing");
-        } else if(inputSelect.equals("save"))
-            user.saveMedia(inputSelect, user);
-        {
-            ui.displayMessage(choice + " series is being saved");
-        }
+        playOrSave(inputSelect, user);
     }
 
 
@@ -197,43 +184,36 @@ public void play(String movieFindInFile)
 
     }
 
-    public void getRating()
-    {
-
-    }
-
     public void viewAllSeries(User user) {
     Boolean isItValid = false;
                 ui.displayMessage("All series: " + io.scanMedia("100bedsteserier.txt"));
     String serieSave = ui.getInput("Write the name of the serie you want to save or play");
-               ui.displayMessage("You choose: " +  io.searchInFile("100bedsteserier.txt", serieSave));
-                while(!isItValid) {
-        String choice = ui.getInput("Do you want to save or play the serie?");
-        if(choice.equals("save")) {
-            user.saveMedia(serieSave, user);
-            isItValid = true;
-        } else if(choice.equals("play")) {
-            ui.displayMessage(choice + " is now playing");
-            isItValid = true;
-        } else {
-            ui.displayMessage("Please write save or play");
-        } }}
+    String mediaFindInFile = String.valueOf(io.searchInFile("100bedsteserier.txt", serieSave));
+               ui.displayMessage("You choose: " +  mediaFindInFile);
+               playOrSave(mediaFindInFile, user);
+    }
 
-    public void viewAllMovies(User user)
-    {
+    public void viewAllMovies(User user) {
+
         Boolean isValid = false;
-
         ui.displayMessage("All movies: " + io.scanMedia("100bedstefilm.txt"));
         String movieSave = ui.getInput("Write the name of the movie you want to save or play");
         String movieFindInFile = String.valueOf(io.searchInFile("100bedstefilm.txt", movieSave));
         ui.displayMessage("You choose: " + movieFindInFile);
+        playOrSave(movieFindInFile, user);
+    }
+
+
+    public void playOrSave(String mediaFindInFile, User user) {
+        Boolean isValid = false;
         while(!isValid) {
-            String choice = ui.getInput("Do you want to save or play the movie?");
+            String choice = ui.getInput("Do you want to save or play?");
             if(choice.equals("save")) {
-                user.saveMedia(movieSave, user);
+                user.addToSavedMedia(mediaFindInFile, user);
+                ui.displayMessage("Your media has been saved.");
                 isValid = true;
             } else if(choice.equals("play")) {
-                    play(movieFindInFile);
+                play(mediaFindInFile, user);
                 isValid = true;
             } else {
                 ui.displayMessage("Please write save or play");

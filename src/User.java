@@ -16,26 +16,20 @@ public class User {
        this.password = password;
    }
 
-    public void saveMedia(String media, User user) {
-       TextUI ui = new TextUI();
-        FileIO io = new FileIO();
-        String saveMedia = String.valueOf(io.searchInFile("100bedstefilm.txt", media));
-        String savesMedia = String.valueOf(io.searchInFile("100bedsteserier.txt", media));
-        savedMedia.add(saveMedia);
-       ui.displayMessage(String.valueOf(getSavedMedia(user)));
-    }
+    public void addToWatchedMedia(String mediaFindInFile, User user)
+   {
+       FileIO io = new FileIO();
+       watchedMedia.add(mediaFindInFile);
+       io.watchedMediaToFile("watchedMedia.txt", user);
+   }
 
-    public void saveWatchedMedia(String media, User user)
-    {
-        TextUI ui = new TextUI();
-        FileIO io = new FileIO();
-        String watchedMovies = String.valueOf(io.searchInFile("100bedstefilm.txt", media));
-        String watchedSeries = String.valueOf(io.searchInFile("100bedsteserier.txt", media));
-        watchedMedia.add(watchedMovies);
-        watchedMedia.add(watchedSeries);
-        ui.displayMessage(String.valueOf(getWatchedMedia(user)));
-    }
+   public void addToSavedMedia(String mediaFindInFile, User user)
+   {
+       FileIO io = new FileIO();
+       savedMedia.add(mediaFindInFile);
+       io.savedMediaToFile("savedMedia.txt", user);
 
+   }
 
     public String getUsername()
     {

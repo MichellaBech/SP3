@@ -18,6 +18,24 @@ public class TextUI {
 
     }
 
+    //Method for the userInput in the movieSearch method in Menu class
+    public int getIntInput(String msg) {
+        int userInput=0;
+        boolean isValidInput=false;
+
+        while(!isValidInput) {
+            try{
+                System.out.print(msg);
+                userInput = Integer.parseInt(scan.nextLine());
+                isValidInput = true;
+            }catch (NumberFormatException e){
+                System.out.println("Invalid input.Please enter a valid number.");
+            }
+
+        }
+        return userInput;
+
+    }
     /*
     public String getChoice(ArrayList<String> options, String msg){
         System.out.println(msg);
