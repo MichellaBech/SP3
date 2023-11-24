@@ -52,6 +52,20 @@ public class FileIO {
         }
     }
 
+    public void saveWatchedMedia(ArrayList<User> watchedMovies, User user) {
+        TextUI ui = new TextUI();
+        try {
+            FileWriter writer = new FileWriter("watchedMedia.txt", true);
+            for (User c : watchedMovies) {
+                String textTosave = String.valueOf(c.getWatchedMedia(user)); // what am I doing wrong?? I don't want to create a new user...
+                writer.write(textTosave + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            ui.displayMessage("Something went wrong while writing to file ");
+        }
+    }
+
     public boolean readFile(String username, String password, String path) {
         Menu menu = new Menu();
         TextUI ui = new TextUI();

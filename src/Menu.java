@@ -76,7 +76,7 @@ public class Menu {
                 chooseCategorie();
                 break;
             case 4:
-                user.getWatchedMedia();
+                user.getWatchedMedia(user);
                 break;
             case 5:
                 user.getSavedMedia(user);
@@ -131,6 +131,7 @@ public class Menu {
 
     //Marwa
     public void movieSearch(String filepath, User user) {
+        ArrayList<User> input = new ArrayList<>();
         ui.displayMessage("All movies: " + io.scanMedia("100bedstefilm.txt"));
         FileIO io = new FileIO();
         String inputSearch = ui.getInput("Search movie: ");
@@ -145,11 +146,12 @@ public class Menu {
             }
         }
     String inputSelect = ui.getInput("Select movie: ");
+        ui.displayMessage("You choose: " + io.searchInFile("100bedstefilm.txt", inputSelect));
     String choice = ui.getInput("Will you like to play or save movie");
         if(choice.equals("play")) {
         play(choice);
     } else if(inputSelect.equals("save"))
-                user.saveMedia(inputSelect, user);
+            user.saveMedia(inputSelect, user);
     {
         ui.displayMessage(choice + " movie is being saved");
     }
@@ -183,7 +185,10 @@ public class Menu {
 
 public void play(String choice)
 {
-    ui.displayMessage(choice + " is now playing");
+    ArrayList<User> input = new ArrayList<>();
+    ui.displayMessage(movieFindInFile + " is now playing");
+    //method to save in the list in user class
+    io.saveWatchedMedia(input, user);
 }
 
     //Make a method call from FileIO
@@ -227,7 +232,7 @@ public void play(String choice)
                 user.saveMedia(movieSave, user);
                 isValid = true;
             } else if(choice.equals("play")) {
-                    ui.displayMessage(choice + " is now playing");
+                    play(movieFindInFile);
                 isValid = true;
             } else {
                 ui.displayMessage("Please write save or play");

@@ -36,7 +36,7 @@ public class User {
         return password;
     }
 
-    public HashSet<String> getWatchedMedia()
+    public HashSet<String> getWatchedMedia(User user)
     {
         return watchedMedia;
     }
@@ -53,5 +53,7 @@ public class User {
     {
         return "Username: " + getUsername() +  " " + "Password: " + getPassword();
     }
+
+
 
 }
