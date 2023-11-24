@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class FileIO {
 
-    ArrayList<User> login = new ArrayList<>();
+    private ArrayList<User> login = new ArrayList<>();
 
     public ArrayList<User> readLoginFromFile(String path) {
         ArrayList<User> loginList = new ArrayList<>();
@@ -53,12 +53,12 @@ public class FileIO {
         }
     }
 
-  /* public void saveWatchedMovies(ArrayList<User> watchedMovies) {
+  public void saveWatchedMovies(ArrayList<User> watchedMovies, User user) {
         TextUI ui = new TextUI();
         try {
             FileWriter writer = new FileWriter("watchedMovies.txt", true);
             for (User c : watchedMovies) {
-                String textTosave = c.getWatchedMedia(); // what am I doing wrong?? I don't want to create a new user...
+                String textTosave = String.valueOf(c.getWatchedMedia(user)); // what am I doing wrong?? I don't want to create a new user...
                 writer.write(textTosave + "\n");
             }
             writer.close();
@@ -66,7 +66,6 @@ public class FileIO {
             ui.displayMessage("Something went wrong while writing to file ");
         }
     }
-   */
 
     public boolean readFile(String username, String password, String path) {
         Menu menu = new Menu();
