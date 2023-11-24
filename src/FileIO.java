@@ -1,6 +1,8 @@
 package src;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 
@@ -149,6 +151,33 @@ public class FileIO {
             System.out.println("File not found");
         }
         return movieList;
+    }
+
+    //Method for getting a complete list of movies sorted by publication year
+    public ArrayList<Movies>publication(String path) {
+        ArrayList<Movies> resultList = new ArrayList<>();
+        File file = new File(path);
+        try {
+            Scanner scan = new Scanner(file);
+            while (scan.hasNextLine()) {
+                String publicationData = scan.nextLine();
+                String[] publicationInfo = publicationData.split(";");
+                if (publicationInfo.length >= 2) {
+                    String title = publicationInfo[0];
+                    String publicationYear = publicationInfo[1];
+
+                    Movies movie = new Movies(title, publicationYear);
+                    resultList.add(movie);
+                } else {
+                    System.out.print("no match");
+                }
+            }
+
+            Collections.sort(resultList, Comparator.comparing(Movies::getPublication));
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+        return resultList;
     }
 
 

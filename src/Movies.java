@@ -1,7 +1,13 @@
 package src;
 
 public class Movies extends Media{
-    public Movies(String title) {
-        super(title);
+
+    private String title;
+
+    private String publication;
+
+
+    public Movies (String title,String publication){
+        super(title,publication);
     }
 }
