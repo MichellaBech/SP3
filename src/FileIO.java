@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class FileIO {
 
-    ArrayList<User> login = new ArrayList<>();
+    private ArrayList<User> login = new ArrayList<>();
 
     public ArrayList<User> readLoginFromFile(String path) throws RuntimeException {
         ArrayList<User> loginList = new ArrayList<>();

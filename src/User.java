@@ -25,6 +25,17 @@ public class User {
        ui.displayMessage(String.valueOf(getSavedMedia(user)));
     }
 
+    public void saveWatchedMedia(String media, User user)
+    {
+        TextUI ui = new TextUI();
+        FileIO io = new FileIO();
+        String watchedMovies = String.valueOf(io.searchInFile("100bedstefilm.txt", media));
+        String watchedSeries = String.valueOf(io.searchInFile("100bedsteserier.txt", media));
+        watchedMedia.add(watchedMovies);
+        watchedMedia.add(watchedSeries);
+        ui.displayMessage(String.valueOf(getWatchedMedia(user)));
+    }
+
 
     public String getUsername()
     {
@@ -38,6 +49,9 @@ public class User {
 
     public HashSet<String> getWatchedMedia(User user)
     {
+        TextUI ui = new TextUI();
+        ui.displayMessage("Your saved Media List: ");
+        ui.displayMessage("" + watchedMedia);
         return watchedMedia;
     }
 
