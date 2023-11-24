@@ -183,7 +183,7 @@ public class Menu {
 
 
 
-public void play(String choice)
+public void play(String movieFindInFile)
 {
     ArrayList<User> input = new ArrayList<>();
     ui.displayMessage(movieFindInFile + " is now playing");
@@ -225,7 +225,8 @@ public void play(String choice)
 
         ui.displayMessage("All movies: " + io.scanMedia("100bedstefilm.txt"));
         String movieSave = ui.getInput("Write the name of the movie you want to save or play");
-        ui.displayMessage("You choose: " + io.searchInFile("100bedstefilm.txt", movieSave));
+        String movieFindInFile = String.valueOf(io.searchInFile("100bedstefilm.txt", movieSave));
+        ui.displayMessage("You choose: " + movieFindInFile);
         while(!isValid) {
             String choice = ui.getInput("Do you want to save or play the movie?");
             if(choice.equals("save")) {
