@@ -61,7 +61,8 @@ public class Menu {
                 "\n 4: Movies you've seen" +
                 "\n 5: Saved movies" +
                 "\n 6: View all movies" +
-                "\n 7: View all series");
+                "\n 7: View all series" +
+                "\n 8: Seasons and episodes");
 
         int inputInt = Integer.valueOf(input);
         switch (inputInt) {
@@ -86,6 +87,10 @@ public class Menu {
             case 7:
                 viewAllSeries(user);
                 break;
+            case 8:
+                seriesSeasonsAndEpisodes(user);
+                break;
+
             default:
                 ui.displayMessage("Please write a number between 1-4");
         }
@@ -126,8 +131,9 @@ public class Menu {
 
     //Marwa
     public void movieSearch(String filepath, User user) {
+        ui.displayMessage("All movies: " + io.scanMedia("100bedstefilm.txt"));
         FileIO io = new FileIO();
-        String inputSearch = ui.getInput("Search movie");
+        String inputSearch = ui.getInput("Search movie: ");
         ArrayList<String> searchingResults = io.searchMovies(inputSearch, filepath);
 
         if (searchingResults.size() == 0) {
@@ -138,10 +144,10 @@ public class Menu {
                 ui.displayMessage(results);
             }
         }
-    String inputSelect = ui.getInput("Select movie");
+    String inputSelect = ui.getInput("Select movie: ");
     String choice = ui.getInput("Will you like to play or save movie");
         if(choice.equals("play")) {
-        ui.displayMessage(choice + " is now playing");
+        play(choice);
     } else if(inputSelect.equals("save"))
                 user.saveMedia(inputSelect, user);
     {
@@ -175,7 +181,10 @@ public class Menu {
 
 
 
-
+public void play(String choice)
+{
+    ui.displayMessage(choice + " is now playing");
+}
 
     //Make a method call from FileIO
     public void chooseCategorie()
@@ -223,5 +232,18 @@ public class Menu {
             } else {
                 ui.displayMessage("Please write save or play");
             } }
+    }
+
+    public void seriesSeasonsAndEpisodes(User user)
+    {
+        Series series = new Series();
+        ui.displayMessage("All series: " + io.scanMedia("100bedsteserier.txt"));
+        series.seasonsAndEpisodes();
+        String input = ui.getInput("Do you want to go back to main menu? Y/N");
+        if (input.equalsIgnoreCase("Y") ){
+            mainMenu(user);
+        } else {
+            ui.displayMessage("We hope to see you soon again!");
+        }
     }
 }
