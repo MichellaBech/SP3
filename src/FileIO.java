@@ -8,14 +8,13 @@ public class FileIO {
 
     ArrayList<User> login = new ArrayList<>();
 
-    public ArrayList<User> readLoginFromFile(String path) {
+    public ArrayList<User> readLoginFromFile(String path) throws RuntimeException {
         ArrayList<User> loginList = new ArrayList<>();
         TextUI ui = new TextUI();
-
         try {
             File myObj = new File(path);
             if (!myObj.exists()) {
-                ui.displayMessage("File not found: " + path);
+                throw new FileNotFoundException("File not found"); // Throw an exception
             }
             try (Scanner myReader = new Scanner(myObj)) {
                 String line = myReader.nextLine();
@@ -28,12 +27,12 @@ public class FileIO {
                         loginList.add(user);
                     }
                 }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
             }
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
+        } catch (FileNotFoundException e) {
+            // Log or handle the exception as needed
+            throw new RuntimeException(e); // Re-throw the exception
         }
+
         return loginList;
     }
 
@@ -45,6 +44,20 @@ public class FileIO {
             FileWriter writer = new FileWriter("data.txt", true);
             for (User c : login) {
                 String textTosave = c.getUsername() + "," + c.getPassword();
+                writer.write(textTosave + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            ui.displayMessage("Something went wrong while writing to file ");
+        }
+    }
+
+    public void saveWatchedMedia(ArrayList<User> watchedMovies, User user) {
+        TextUI ui = new TextUI();
+        try {
+            FileWriter writer = new FileWriter("watchedMedia.txt", true);
+            for (User c : watchedMovies) {
+                String textTosave = String.valueOf(c.getWatchedMedia(user)); // what am I doing wrong?? I don't want to create a new user...
                 writer.write(textTosave + "\n");
             }
             writer.close();
