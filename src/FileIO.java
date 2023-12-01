@@ -61,6 +61,7 @@ public class FileIO {
             for (User c : watchedMovies) {
                 String textTosave = String.valueOf(c.getWatchedMedia(user)); // what am I doing wrong?? I don't want to create a new user...
                 writer.write(textTosave + "\n");
+            }
 
             writer.close();
         } catch (IOException e) {

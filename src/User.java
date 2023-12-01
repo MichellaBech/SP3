@@ -3,7 +3,6 @@ package src;
 import java.util.HashSet;
 
 public class User {
-
     private String username;
     private String password;
 
@@ -16,7 +15,7 @@ public class User {
        this.password = password;
    }
 
-    public void addToWatchedMedia(String mediaFindInFile, User user)
+  public void addToWatchedMedia(String mediaFindInFile, User user)
    {
        FileIO io = new FileIO();
        watchedMedia.add(mediaFindInFile);

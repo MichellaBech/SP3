@@ -4,31 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2128335e-619b-4990-a659-0de383d00b37" name="Changes" comment="Class">
-      <change afterPath="$PROJECT_DIR$/src/FileIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="bd000e70-41f7-452c-929f-a8b3c6129742" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/.idea/Class.puml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/.idea/Class.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/FileIO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/FileIO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/Media.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/Media.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/Movies.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/Movies.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/Series.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/Series.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/TextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/TextUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/src/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/src/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SP3/watchedMedia.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SP3/watchedMedia.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="UML Sequence" />
-        <option value="UML Object" />
-        <option value="UML Class" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -40,20 +42,20 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2YDXJQN1eRmzBrxHTyvkwGHOUUG" />
+  <component name="ProjectId" id="2Ytd4ayMNdt4ANbAVRyEzke1IQK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "myBranchMichella",
+    "git-widget-placeholder": "MariaVer5SP3__Plus",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,199 +63,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="src" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2128335e-619b-4990-a659-0de383d00b37" name="Changes" comment="" />
-      <created>1700061052439</created>
+      <changelist id="bd000e70-41f7-452c-929f-a8b3c6129742" name="Changes" comment="" />
+      <created>1701348620555</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1700061052439</updated>
-      <workItem from="1700061053707" duration="472000" />
-      <workItem from="1700125956500" duration="17742000" />
+      <updated>1701348620555</updated>
+      <workItem from="1701348624663" duration="152000" />
+      <workItem from="1701353693245" duration="520000" />
     </task>
-    <task id="LOCAL-00001" summary="Domain diagram.puml">
-      <option name="closed" value="true" />
-      <created>1700128055691</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1700128055691</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Domain diagram.puml">
-      <option name="closed" value="true" />
-      <created>1700128170141</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1700128170141</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Domain diagram.puml">
-      <option name="closed" value="true" />
-      <created>1700128252868</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1700128252868</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700128732437</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1700128732439</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700129696683</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700129696683</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700129823410</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1700129823410</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700131389682</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700131389682</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700209094160</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700209094160</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700209801597</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1700209801597</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700210094430</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700210094430</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700210145792</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1700210145792</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700211575704</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1700211575704</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700212005073</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1700212005073</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700212207278</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1700212207278</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700212512640</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1700212512640</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700212610736</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1700212610736</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700213325209</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1700213325210</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700213425288</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1700213425288</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700216014820</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1700216014820</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700216264033</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1700216264033</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Class">
-      <option name="closed" value="true" />
-      <created>1700216374905</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1700216374905</updated>
-    </task>
-    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Domain diagram.puml" />
-    <MESSAGE value="Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class" />
   </component>
 </project>

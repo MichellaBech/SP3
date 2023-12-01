@@ -10,8 +10,6 @@ public class Main {
         Menu menu = new Menu();
         Series series = new Series();
         menu.startMenu();
-
-
     }
 }
 
